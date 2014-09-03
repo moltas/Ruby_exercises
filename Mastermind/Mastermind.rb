@@ -8,8 +8,11 @@ class Game
 
 	def play
 
-		10.times do |i|
+		puts "Do you want the computer to create a code? YES/NO"
+		answer = gets.chomp
 
+		#HERE THE PLAYER HAVE TO GUESS
+		10.times do |i|
 			puts "\nThis is round nr: #{i+1}"
 
 			current_guess = @player.guess_code
@@ -22,6 +25,8 @@ class Game
 				puts "You have #{standing[:almost].length} near matches"
 			end	
 		end 
+
+
 
 	end #end play
 
@@ -47,6 +52,7 @@ class Game
 		color == @theComputer.random_code[position]
 
 	end
+
 end
 #Klass som skapar en random kod
 class Computer
@@ -61,6 +67,7 @@ class Computer
 	def secret_code #Metod som genererar en kod utifrån constant array
     	COLORS.sample(4)
 	end
+
 end 
 #Klass där spelarens val skapas och lagras
 class Player
@@ -69,6 +76,12 @@ class Player
 		puts "Guess the code! Choose 4 colors from B, G, R, O, Y, P"
 		guess = gets.chomp
 		guess.upcase.split(" ")
+	end
+
+	def create_code
+		puts "Create the code"
+		code = gets.chomp
+		code.upcase.split(" ")
 	end
 end 
 
