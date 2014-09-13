@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 
 #Klass som sparar användarinput
 class User_input
